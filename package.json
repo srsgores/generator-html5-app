@@ -1,0 +1,41 @@
+{
+	"name":             "generator-html5-app",
+	"version":          "0.0.1",
+	"description":      "HTML5 app for simple projects.  Basic grunt file, with sass and optionally sass boilerplate",
+	"keywords":         [
+		"yeoman-generator"
+	],
+	"homepage":         "https://github.com/srsgores/generator-html5-app",
+	"bugs":             "https://github.com/srsgores/generator-html5-app/issues",
+	"author":           {
+		"name":  "Sean Goresht",
+		"email": "seangores@gmail.com",
+		"url":   "https://github.com/srsgores"
+	},
+	"main":             "app/index.js",
+	"repository":       {
+		"type": "git",
+		"url":  "git://github.com/srsgores/generator-html5-app.git"
+	},
+	"scripts":          {
+		"test": "mocha"
+	},
+	"dependencies":     {
+		"yeoman-generator": "~0.14.0"
+	},
+	"devDependencies":  {
+		"mocha": "~1.14.0"
+	},
+	"peerDependencies": {
+		"yo": ">=1.0.0"
+	},
+	"engines":          {
+		"node": ">=0.8.0",
+		"npm":  ">=1.2.10"
+	},
+	"licenses":         [
+		{
+			"type": "MIT"
+		}
+	]
+}
