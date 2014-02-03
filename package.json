@@ -1,6 +1,6 @@
 {
 	"name":             "generator-html5-app",
-	"version":          "0.0.1",
+	"version":          "0.0.2",
 	"description":      "HTML5 app for simple projects.  Basic grunt file, with sass and optionally sass boilerplate",
 	"keywords":         [
 		"yeoman-generator"
