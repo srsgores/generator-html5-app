@@ -1,6 +1,27 @@
 {
-	"name":         "<%= this.appname %>",
+	"name":         "<%= _.slugify(appname) %>",
 	"version":      "0.0.1",
-	"dependencies": {}
+	"authors": [
+		"<%=authorName %><<%= authorEmail %>>"
+	],
+	"description": "<%= description %>",
+	"main":        "app/index.html",
+	"keywords":    [
+		"<%= (description.replace(/ /g, ', ')) %>"
+	],
+	"license":     "<%= license %>",
+	"homepage":    "<%= authorURL %>",
+	"ignore":      [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"app/bower_components",
+		"test",
+		"tests"
+	],
+	"dependencies": {
+		<% if (includejQuery) { %>"jquery": "*",<% } %>
+		<% if (includeModernizr) { %>"modernizr": "*"<% } %>
+	}
 }
 

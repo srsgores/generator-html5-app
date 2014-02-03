@@ -1,0 +1,47 @@
+/*------------------------------------------------------------------------------------------------------------------------
+ @package: <%= appname %>
+ @subpackage: partials
+
+ @author: <%= authorName %>
+ @www: <%= authorURL %>
+
+ @copyright: COPYRIGHT <%= currentDate %> <%= authorName %>
+ @license: <%= license %>
+
+ =============================================================================
+ Filename: _variables.scss
+ =============================================================================
+ This file is responsible for all styles on the <%= appname %> app.  Styles should be compiled using compass and sass.
+ --------------------------------------------------------------------------------------------------------------------- */
+
+/* =============================================================================
+Variables
+========================================================================== */
+/* Type */
+$base-font-size: 100%;
+$base-font-family: "Arial", "Helvetica";
+$base-line-height: 1.3;
+
+/* Measurements */
+$margin: 1em;
+$margin-large: $margin * $base-line-height;
+$margin-small: $margin / $base-line-height;
+$margin-mini: $margin / ($base-line-height * 2);
+$padding: 1em;
+$padding-small: $padding / $base-line-height;
+$padding-large: $padding * $base-line-height;
+
+$border-radius: 0.4em;
+$border-radius-large: $border-radius * 1.4;
+
+$border: 1px solid #000;
+
+/*Transitions */
+$transition-time: 0.5s;
+$transition-function: ease;
+
+/* Colours */
+$body-background: #FFFFFF;
+
+/* Constraints */
+$container-max-width: 80em;

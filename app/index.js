@@ -71,7 +71,7 @@ Html5AppGenerator.prototype.askFor = function askFor(_) {
 		},
 		{
 			name: "description",
-			message: "Describe your component",
+			message: "Describe your app",
 			default: "A sample description"
 		},
 		{
@@ -93,11 +93,6 @@ Html5AppGenerator.prototype.askFor = function askFor(_) {
 			type: "confirm",
 			name: "includeCompass",
 			message: "Use compass (scss)?"
-		},
-		{
-			type: "confirm",
-			name: "coffee",
-			message: "Use coffeescript?"
 		},
 		{
 			name: "license",
@@ -124,20 +119,19 @@ Html5AppGenerator.prototype.askFor = function askFor(_) {
 };
 
 Html5AppGenerator.prototype.app = function app() {
-	this.mkdir("app");
-	this.mkdir("app/templates");
-
 	this.template("_package.json", "package.json");
 	this.template("_bower.json", "bower.json");
+	this.copy("bowerrc", ".bowerrc");
 };
 
 Html5AppGenerator.prototype.projectfiles = function projectfiles() {
 	this.copy("editorconfig", ".editorconfig");
 	this.copy("jshintrc", ".jshintrc");
 	this.copy("_gitignore", ".gitignore");
-	this.copy("htaccess", ".htaccess");
+	this.copy("htaccess", "app/.htaccess");
 	this.copy("gitattributes", ".gitattributes");
-	this.copy("favicon.ico", "favicon.ico");
+	this.copy("favicon.ico", "app/favicon.ico");
+	this.copy("robots.txt", "app/robots.txt");
 };
 
 Html5AppGenerator.prototype.createEmptyDirectories = function createEmptyDirectories() {
@@ -147,9 +141,32 @@ Html5AppGenerator.prototype.createEmptyDirectories = function createEmptyDirecto
 };
 
 Html5AppGenerator.prototype.generateHTML = function generateHTML() {
-	this.template("_index.html", "index.html");
+	this.template("_index.html", "app/index.html");
 };
 
 Html5AppGenerator.prototype.scaffoldGruntFile = function scaffoldGruntFile() {
 	this.template("_gruntfile.js", "Gruntfile.js");
+};
+
+Html5AppGenerator.prototype.generateStyles = function generateStyles() {
+	if (this.includeCompass) {
+		this.mkdir("app/styles/partials");
+		this.template("styles/partials/_variables.scss", "app/styles/partials/_variables.scss");
+		this.template("styles/partials/_helpers.scss", "app/styles/partials/_helpers.scss");
+		this.template("styles/partials/_media-queries.scss", "app/styles/partials/_media-queries.scss");
+		this.template("styles/main.scss", "app/styles/main.scss");
+	}
+	else {
+		// just plain CSS
+		this.template("styles/_main.css", "app/styles/main.css");
+	}
+};
+
+Html5AppGenerator.prototype.generateScripts = function generateScripts() {
+	if (this.coffee) {
+		this.template("scripts/_main.coffee", "app/scripts/main.coffee");
+	}
+	else {
+		this.template("/scripts/_main.js", "app/scripts/main.js");
+	}
 };

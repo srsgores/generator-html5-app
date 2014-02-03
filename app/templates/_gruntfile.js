@@ -181,22 +181,22 @@ module.exports = function (grunt) {
 		// Compiles Sass to CSS and generates necessary files if requested
 		compass: {
 			options: {
-				sassDir: "<%%= yeoman.app %>/styles",
-				cssDir: ".tmp/styles",
-				generatedimgDir: ".tmp/img/generated",
-				imgDir: "<%%= yeoman.app %>/img",
-				javascriptsDir: "<%%= yeoman.app %>/scripts",
-				fontsDir: "<%%= yeoman.app %>/styles/fonts",
-				importPath: "<%%= yeoman.app %>/bower_components",
-				httpimgPath: "/img",
-				httpGeneratedimgPath: "/img/generated",
-				httpFontsPath: "/styles/fonts",
+				sassDir: '<%%= yeoman.app %>/styles',
+				cssDir: '.tmp/styles',
+				generatedImagesDir: '.tmp/img/generated',
+				imagesDir: '<%%= yeoman.app %>/img',
+				javascriptsDir: '<%%= yeoman.app %>/scripts',
+				fontsDir: '<%%= yeoman.app %>/styles/fonts',
+				importPath: '<%%= yeoman.app %>/bower_components',
+				httpImagesPath: '/img',
+				httpGeneratedImagesPath: '/img/generated',
+				httpFontsPath: '/styles/fonts',
 				relativeAssets: false,
 				assetCacheBuster: false
 			},
 			dist: {
 				options: {
-					generatedimgDir: "<%%= yeoman.dist %>/img/generated"
+					generatedImagesDir: '<%%= yeoman.dist %>/images/generated'
 				}
 			},
 			server: {
@@ -220,7 +220,6 @@ module.exports = function (grunt) {
 				}]
 			}
 		},
-
 		// Automatically inject Bower components into the HTML file
 		"bower-install": {
 			app: {

@@ -1,0 +1,481 @@
+/*------------------------------------------------------------------------------------------------------------------------
+ @package: <%= appname %>
+ @subpackage: partials
+
+ @author: <%= authorName %>
+ @www: <%= authorURL %>
+
+ @copyright: COPYRIGHT <%= currentDate %> <%= authorName %>
+ @license: <%= license %>
+
+ =============================================================================
+ Filename: _helpers.scss
+ =============================================================================
+ This file contains all useful helpers (usually used through @extends) in the <%= appname %> app.  Styles should be compiled using compass and sass (make sure SUSY is installed).
+ --------------------------------------------------------------------------------------------------------------------- */
+
+/* =============================================================================
+Visibility Helpers
+========================================================================== */
+/* For image replacement */
+%ir {
+	display: block;
+	text-indent: -99in;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	text-align: left;
+	direction: ltr;
+}
+
+/* Hide for both screenreaders and browsers:
+   css-discuss.incutio.com/wiki/Screenreader_Visibility */
+%hidden {
+	display: none;
+}
+
+%show-phone {
+	display: none;
+}
+
+/* Hide only visually, but have it available for screenreaders: by Jon Neal.
+  www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden */
+%visuallyhidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	left: -500%;
+
+	&.focusable {
+		&:active, &:focus { /* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: drupal.org/node/897638 */
+			clip: auto;
+			height: auto;
+			margin: 0;
+			overflow: visible;
+			position: static;
+			width: auto;
+		}
+	}
+}
+
+/* Hide visually and from screenreaders, but maintain layout */
+%invisible {
+	visibility: hidden;
+}
+
+%visible {
+	visibility: visible;
+}
+/* The Magnificent Clearfix: Updated to prevent margin-collapsing on child elements in most situations.
+   nicolasgallagher.com/micro-clearfix-hack/ */
+
+%clearfix {
+	zoom: 1; //for IE
+	&:before, &:after {
+		content: "";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+%centred {
+	text-align: center;
+}
+
+
+/* =============================================================================
+Overflow
+========================================================================== */
+%overflow-visible {
+	overflow: visible;
+}
+
+%overflow-hidden {
+	overflow: hidden;
+}
+
+/* =============================================================================
+Margins
+========================================================================== */
+
+/* Normal margin */
+%normal-margin {
+	margin: $margin;
+}
+
+%margin-none {
+	margin: 0;
+}
+
+%normal-margin-bottom {
+	margin-bottom: $margin;
+}
+
+%normal-margin-top {
+	margin-top: $margin;
+}
+
+%normal-margin-left {
+	margin-left: $margin;
+}
+
+%normal-margin-right {
+	margin-right: $margin;
+}
+
+/* Normal margin combinations */
+%normal-margin-top-bottom {
+	margin: $margin 0;
+}
+
+%normal-margin-left-right {
+	margin: 0 $margin;
+}
+
+/* Large Margin */
+
+%large-margin {
+	margin: $margin-large;
+}
+
+%large-margin-top-bottom {
+	margin: $margin-large 0;
+}
+
+%large-margin-left-right {
+	margin: 0 $margin-large;
+}
+
+%large-margin-bottom {
+	margin-bottom: $margin-large;
+}
+
+%large-margin-right {
+	margin-right: $margin-large;
+}
+
+%large-margin-left {
+	margin-left: $margin-large;
+}
+
+/* Small Margin */
+
+%small-margin {
+	margin: $margin-small;
+}
+
+%small-margin-top-bottom {
+	margin: $margin-small 0;
+}
+
+%small-margin-left-right {
+	margin: 0 $margin-small;
+}
+
+%small-margin-bottom {
+	margin-bottom: $margin-small;
+}
+
+%small-margin-right {
+	margin-right: $margin-small;
+}
+
+%small-margin-left {
+	margin-left: $margin-small;
+}
+
+/* Mini Margin */
+
+%mini-margin {
+	margin: $margin-mini;
+}
+
+%mini-margin-top-bottom {
+	margin: $margin-mini 0;
+}
+
+%mini-margin-left-right {
+	margin: 0 $margin-mini;
+}
+
+%mini-margin-bottom {
+	margin-bottom: $margin-mini;
+}
+
+%mini-margin-right {
+	margin-right: $margin-mini;
+}
+
+%mini-margin-left {
+	margin-left: $margin-mini;
+}
+
+/* =============================================================================
+Padding
+========================================================================== */
+
+/* Normal padding */
+%normal-padding {
+	padding: $padding;
+}
+
+%padding-none {
+	padding: 0;
+}
+
+%normal-padding-top-bottom {
+	padding: $padding 0;
+}
+
+%normal-padding-left-right {
+	padding: 0 $padding;
+}
+
+%normal-padding-bottom {
+	padding-bottom: $padding;
+}
+
+%normal-padding-right {
+	padding-right: $padding;
+}
+
+%normal-padding-left {
+	padding-left: $padding;
+}
+
+/* Large Padding */
+
+%large-padding {
+	padding: $padding-large;
+}
+
+%large-padding-top-bottom {
+	padding: $padding-large 0;
+}
+
+%large-padding-left-right {
+	padding: 0 $padding-large;
+}
+
+%large-padding-bottom {
+	padding-bottom: $padding-large;
+}
+
+%large-padding-right {
+	padding-right: $padding-large;
+}
+
+%large-padding-left {
+	padding-left: $padding-large;
+}
+
+/* Small Padding */
+
+%small-padding {
+	padding: $padding-small;
+}
+
+%small-padding-top-bottom {
+	padding: $padding-small 0;
+}
+
+%small-padding-left-right {
+	padding: 0 $padding-small;
+}
+
+%small-padding-bottom {
+	padding-bottom: $padding-small;
+}
+
+%small-padding-right {
+	padding-right: $padding-small;
+}
+
+%small-padding-left {
+	padding-left: $padding-small;
+}
+
+
+/* =============================================================================
+Border radius
+========================================================================== */
+
+/* Normal border radii */
+
+%rounded {
+	border-radius: $border-radius;
+}
+
+%rounded-left {
+	border-top-left-radius: $border-radius;
+}
+
+%rounded-right {
+	border-top-right-radius: $border-radius;
+	border-bottom-right-radius: $border-radius;
+}
+
+%rounded-top {
+	border-top-left-radius: $border-radius;
+	border-top-right-radius: $border-radius;
+}
+
+%rounded-bottom {
+	border-bottom-left-radius: $border-radius;
+	border-bottom-right-radius: $border-radius;
+}
+
+%rounded-left-none {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+/* Large border radii */
+
+%rounded-large {
+	border-radius: $border-radius-large;
+}
+
+%rounded-left-large {
+	border-top-left-radius: $border-radius-large;
+	border-bottom-left-radius: $border-radius-large;
+}
+
+%rounded-right-large {
+	border-top-right-radius: $border-radius-large;
+	border-bottom-right-radius: $border-radius-large;
+}
+
+%rounded-top-large {
+	border-top-left-radius: $border-radius-large;
+	border-top-right-radius: $border-radius-large;
+}
+
+%rounded-bottom-large {
+	border-bottom-left-radius: $border-radius-large;
+	border-bottom-right-radius: $border-radius-large;
+}
+
+/* No rounded radii (useful for overriding other elements with radii) */
+
+%rounded-none {
+	border-radius: 0;
+}
+
+%rounded-left-none {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+%rounded-right-none {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+%rounded-top-none {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+%rounded-bottom-none {
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+
+%border-box {
+	box-sizing: border-box;
+}
+
+%transition-all {
+	transition: $transition-time all $transition-function;
+}
+
+
+/* =============================================================================
+Opacity/visibility
+========================================================================== */
+%opacity-0 {
+	opacity: 0;
+}
+
+%opacity-05 {
+	opacity: 0.5;
+}
+
+%opacity-1 {
+	opacity: 1;
+}
+
+/* =============================================================================
+Borders
+========================================================================== */
+%bordered {
+	border: $border;
+}
+
+%bordered-right {
+	border-right: $border;
+}
+
+%bordered-left {
+	border-left: $border;
+}
+
+%bordered-top {
+	border-top: $border;
+}
+
+%bordered-bottom {
+	border-bottom: $border;
+}
+
+%border-none {
+	border: 0;
+}
+
+/* =============================================================================
+Floats
+========================================================================== */
+%pull-left {
+	float: left;
+}
+%pull-right {
+	float: right;
+}
+
+/* =============================================================================
+Positions
+========================================================================== */
+%absolute {
+	position: absolute;
+}
+
+%fixed {
+	position: fixed;
+}
+
+%relative {
+	position: relative;
+}
+
+%static {
+	position: static;
+}
+
+/* =============================================================================
+Display modes
+========================================================================== */
+%block {
+	display: block;
+}
+
+%inline {
+	display: inline-block;
+}

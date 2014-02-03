@@ -2,7 +2,6 @@
 "use strict";
 
 /*
-TODO: Fix name not showing up in bower
 TODO: Scaffold out unit tests folder
 TODO: Scaffold out sample unit tests
 TODO: Scaffold out sample main.scss

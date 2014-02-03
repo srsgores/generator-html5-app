@@ -1,0 +1,15 @@
+/*------------------------------------------------------------------------------------------------------------------------
+ @package: <%= appname %>
+ @subpackage: partials
+
+ @author: <%= authorName %>
+ @www: <%= authorURL %>
+
+ @copyright: COPYRIGHT <%= currentDate %> <%= authorName %>
+ @license: <%= license %>
+
+ =============================================================================
+ Filename: _variables.scss
+ =============================================================================
+ This file is responsible for all media query code in the <%= appname %> app.  Styles should be compiled using compass and sass.  The reason we don't use inline is because it's confusing, and we easily lose track of what media query is where.
+ --------------------------------------------------------------------------------------------------------------------- */

@@ -1,0 +1,17 @@
+/*------------------------------------------------------------------------------------------------------------------------
+ @package: <%= appname %>
+
+ @author: <%= authorName %>
+ @www: <%= authorURL %>
+
+ @copyright: COPYRIGHT <%= currentDate %> <%= authorName %>
+ @license: <%= license %>
+
+ =============================================================================
+ Filename: main.scss
+ =============================================================================
+ This file is responsible for all styles on the <%= appname %> app.  Styles should be compiled using compass and sass.
+ --------------------------------------------------------------------------------------------------------------------- */
+@import "partials/_variables.scss";
+@import "partials/_helpers.scss";
+@import "partials/_media-queries.scss";
