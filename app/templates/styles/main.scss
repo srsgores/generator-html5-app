@@ -15,3 +15,10 @@
 @import "partials/_variables.scss";
 @import "partials/_helpers.scss";
 @import "partials/_media-queries.scss";
+
+body {
+	background: $body-background;
+	font-family: $base-font-family;
+	font-size: $base-font-size;
+	line-height: $base-line-height;
+}
