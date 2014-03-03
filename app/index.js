@@ -167,6 +167,6 @@ Html5AppGenerator.prototype.generateScripts = function generateScripts() {
 		this.template("scripts/_main.coffee", "app/scripts/main.coffee");
 	}
 	else {
-		this.template("/scripts/_main.js", "app/scripts/main.js");
+		this.template("scripts/_main.js", "app/scripts/main.js");
 	}
 };
