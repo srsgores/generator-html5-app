@@ -20,8 +20,8 @@
 		"tests"
 	],
 	"dependencies": {
-		<% if (includejQuery) { %>"jquery": "*",<% } %>
-		<% if (includeModernizr) { %>"modernizr": "*"<% } %>
+		<% if (includejQuery) { %>"jquery": "*"<% } %>
+		<% if (includeModernizr) { %>,"modernizr": "*"<% } %>
 	}
 }
 

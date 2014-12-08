@@ -12,9 +12,9 @@
  =============================================================================
  This file is responsible for all styles on the <%= appname %> app.  Styles should be compiled using compass and sass.
  --------------------------------------------------------------------------------------------------------------------- */
-@import "partials/_variables.scss";
-@import "partials/_helpers.scss";
-@import "partials/_media-queries.scss";
+@import "partials/_variables";
+@import "partials/_helpers";
+@import "partials/_media-queries";
 
 body {
 	background: $body-background;
